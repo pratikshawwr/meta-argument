@@ -15,25 +15,12 @@ pipeline {
             description: 'Select Terraform Action'
         )
 
-        string(
-            name: 'BRANCH',
-            defaultValue: 'meta_argument_count',
-            description: 'Git branch'
-        )
+       
     }
 
     stages {
 
-        stage('Git Checkout') {
-            steps {
-                checkout scmGit(
-                    branches: [[name: "*/${params.BRANCH}"]],,
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/pratikshawwr/meta-argument.git'
-                    ]]
-                )
-            }
-        }
+       
 
         stage('Terraform Init') {
             steps {
