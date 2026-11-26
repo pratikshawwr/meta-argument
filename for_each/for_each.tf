@@ -6,7 +6,7 @@ locals {
  }
 }  
  
-resource "aws_instance" "my_ec2" {
+resource "aws_instance" "my_ec2_for_each" {
  for_each = local.ec2
  instance_type = each.value.instance_type
  ami = each.value.ami_id
