@@ -29,7 +29,7 @@ pipeline {
                 checkout scmGit(
                     branches: [[name: "*/${params.BRANCH}"]],
                     userRemoteConfigs: [[
-                        url: 'https://github.com/USERNAME/terraform-jenkins-project.git'
+                        url: 'https://github.com/pratikshawwr/meta-argument.git'
                     ]]
                 )
             }
