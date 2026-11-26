@@ -17,7 +17,7 @@ pipeline {
 
         string(
             name: 'BRANCH',
-            defaultValue: 'feature/meta_argument_count',
+            defaultValue: '*/meta_argument_count',
             description: 'Git branch'
         )
     }
