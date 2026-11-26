@@ -17,7 +17,7 @@ pipeline {
 
         string(
             name: 'BRANCH',
-            defaultValue: 'feature/terraform-ec2',
+            defaultValue: 'feature/meta_argument_count',
             description: 'Git branch'
         )
     }
