@@ -40,7 +40,7 @@ locals {
  vms = {
    "vm1" = { instance_type = "t3.micro", ami_id = "ami-0c30b7300f5fb34cd", name = "My-EC2-1"},
    "vm2" = { instance_type = "t3.small", ami_id = "ami-0c30b7300f5fb34cd", name = "My-EC2-2" },
-   "vm3" = { instance_type = "t3.medium", ami_id = "ami-0c30b7300f5fb34cd", name = "My-EC2-3"}
+  # "vm3" = { instance_type = "t3.medium", ami_id = "ami-0c30b7300f5fb34cd", name = "My-EC2-3"}
  }
 } 
 
@@ -50,7 +50,7 @@ resource "aws_instance" "my_ec2_for_each_loop" {
  ami = each.value.ami_id
 
  tags = {
-  name= "Instance-$(each.value.name)"
- }
+  Name = "Instance-${each.value.name}"
+}
 
 }
