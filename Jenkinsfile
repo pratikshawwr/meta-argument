@@ -17,7 +17,7 @@ pipeline {
 
         string(
             name: 'BRANCH',
-            defaultValue: '*/meta_argument_count',
+            defaultValue: 'meta_argument_count',
             description: 'Git branch'
         )
     }
@@ -27,7 +27,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 checkout scmGit(
-                    branches: [[name: "*/${params.BRANCH}"]],
+                    branches: [[name: "*/${params.BRANCH}"]],,
                     userRemoteConfigs: [[
                         url: 'https://github.com/pratikshawwr/meta-argument.git'
                     ]]
