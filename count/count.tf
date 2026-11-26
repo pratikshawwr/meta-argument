@@ -1,4 +1,4 @@
-resource "aws_instance" "count_example" {
+/*resource "aws_instance" "count_example" {
   count         = 3
   ami           = "ami-0123456789abcdef0"  # Replace with your desired AMI ID
   instance_type = "t2.micro"
@@ -8,4 +8,4 @@ resource "aws_instance" "count_example" {
                
   }
 }
-
+*/
