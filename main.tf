@@ -49,8 +49,20 @@ resource "aws_instance" "my_ec2_for_each_loop" {
  instance_type = each.value.instance_type
  ami = each.value.ami_id
 
- tags = {
-  Name = "Instance-${each.value.name}"
+ tags = merge(var.tag_values, {
+    Name = "Instance-${each.value.name}"
+  })
+
 }
 
+
+variable "tag_values" { 
+   description = "Map of tags to assign to the resources"
+   type  = map(string)
+   default  = {
+   Environment = "Development"
+   Team  = "DevOps"
+   batch = "26"
+   Class = "Young minds"
+  }
 }
